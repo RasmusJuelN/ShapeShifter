@@ -1,0 +1,22 @@
+.ss-landingpage-text-container {
+    position: absolute;
+    top: 15%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    text-align: center; 
+}
+
+.ss-landingpage-headertext {
+    font-size: 35px; 
+    color:var(--yellow);
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.ss-landingpage-normaltext {
+    font-size: 20px; 
+    letter-spacing: 2px;
+    font-weight: 600;
+    color:white;
+}

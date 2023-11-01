@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+  @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+*{
+    margin: 0;
+    font-family: michroma;
+   
+}
+
+:root{
+    --dark-grey: #1e1e1e;
+    --blue: #66c7ff;
+    --yellow: #ffde59;
+
+    --yellow-hover: #f3f351;
+}
