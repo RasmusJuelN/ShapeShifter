@@ -1,0 +1,73 @@
+.ss-signup-container {
+    width: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .ss-login-text-container {
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .ss-header-text {
+    color: white;
+    font-size: 35px;
+    padding-bottom: 20px;
+  }
+  
+  .ss-header-text:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 70%;
+    height: 2px;
+    background-color: var(--yellow);
+  }
+  
+  p {
+    color: white;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  
+  .ss-username-container {
+    width: 320px;
+    box-sizing: border-box;
+  }
+  
+  input {
+    position: relative;
+    display: block;
+    outline: none;
+    max-width: 300px;
+    background-color: var(--dark-grey);
+    border: 1.5px solid var(--yellow);
+    border-radius: 10px;
+    height: 30px;
+    color: white;
+    padding: 10px 15px;
+    margin: 0px auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .ss-signup-button {
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: var(--blue);
+    color: var(--dark-grey);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: var(--yellow);
+    }
+  }

@@ -1,0 +1,37 @@
+<app-background></app-background>
+<app-header></app-header>
+<div class="ss-signup-container">
+    <div class="ss-login-text-container">
+      <h2 class="ss-header-text">Sign Up</h2>
+    </div>
+  
+    <form class="ss-signup-form" [formGroup]="signupForm" (ngSubmit)="onSignup()">
+      <div class="ss-username-container">
+        <p>Name</p>
+        <input formControlName="name" class="ss-signup-input" type="text">
+      </div>
+  
+      <div class="ss-username-container">
+        <p>Email</p>
+        <input formControlName="email" class="ss-signup-input" type="email">
+      </div>
+  
+      <div class="ss-username-container">
+        <p>Birthday</p>
+        <input formControlName="dateofbirth" class="ss-signup-input" type="text" placeholder="DD-MM-YYYY" >
+      </div>
+  
+      <div class="ss-username-container">
+        <p>Username</p>
+        <input formControlName="username" class="ss-signup-input" type="text">
+      </div>
+  
+      <div class="ss-username-container">
+        <p>Password</p>
+        <input formControlName="password" class="ss-signup-input" type="password">
+      </div>
+  
+      <button class="ss-signup-button" type="submit" [disabled]="signupForm.invalid">Create</button>
+    </form>
+  </div>
+  
