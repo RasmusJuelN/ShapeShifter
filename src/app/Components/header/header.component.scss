@@ -6,6 +6,7 @@
     width: 100%;
     background-color: var(--dark-grey);
     position:absolute;
+    
 }
 
 .ss-logo-container{
@@ -59,6 +60,21 @@
 }
 
 .ss-header-button-login{
+    background-color: var(--yellow);
+    border:none;
+    border-radius: 30px;
+    width: auto;
+    padding:15px;
+    
+    color: var(--dark-grey);
+    cursor:pointer;
+    font-weight: 700;
+    &:hover{
+        background-color: var(--blue);
+    }
+}
+
+.ss-header-button-logout{
     background-color: var(--yellow);
     border:none;
     border-radius: 30px;

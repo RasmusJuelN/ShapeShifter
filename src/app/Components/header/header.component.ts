@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +9,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent {
   isSignupPage!: boolean;
+  
 
-  constructor(private route: ActivatedRoute) {
-    // Subscribe to route changes
+  constructor(private route: ActivatedRoute, private auth: AuthService, private router: Router) {
     this.route.url.subscribe(urlSegments => {
-      // Check if the current route is '/signup'
+   
       this.isSignupPage = urlSegments.length > 0 && urlSegments[0].path === 'signup';
     });
+  }
+
+  isLoggedin(): boolean{
+    const token = localStorage.getItem('token'); // Replace with your actual token name
+
+    return !!token;
+  }
+
+  logout(){
+    this.auth.removeToken();
   }
 }

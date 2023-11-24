@@ -33,7 +33,7 @@ export class LoginComponent {
       .subscribe({
         next:(res)=>{
           console.log(res.message)
-          // alert(res.message)
+          alert(res.message)
           this.toast.success({
             detail: "Success", summary: res.message, duration: 3000
           });
@@ -47,6 +47,7 @@ export class LoginComponent {
           this.router.navigate(['main'])
         },
         error:(err)=>{
+          alert(err.error.message)
           this.toast.error({
             detail: "Error", summary: err?.error.message, duration: 3000
           });

@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MainComponent } from './Components/main/main.component';
 import {NgToastModule} from 'ng-angular-popup';
 import { SignupComponent } from './Components/signup/signup.component';
+import { WorkoutOverviewComponent } from './Components/workout-overview/workout-overview.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SignupComponent } from './Components/signup/signup.component';
     LoginComponent,
     MainComponent,
     SignupComponent,
+    WorkoutOverviewComponent,
     
   ],
   imports: [

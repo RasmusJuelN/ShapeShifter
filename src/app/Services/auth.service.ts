@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
+import { environment } from '../Environment/Environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseUrl: string = 'http://localhost:5020/api/Authentication/'
+  baseUrl: string = environment.apiUrl + "Authentication/"
   private userPayload:any;
 
   constructor(private http:HttpClient) { 
@@ -38,6 +39,10 @@ export class AuthService {
 
   getToken(){
     return localStorage.getItem('token');
+  }
+
+  removeToken(){
+    localStorage.removeItem('token');
   }
 
   decodedToken(){

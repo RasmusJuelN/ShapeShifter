@@ -5,7 +5,8 @@
 
     <div class="ss-header-text">ShapeShifter</div>
     <div class="ss-header-button-container">
-        <button *ngIf="!isSignupPage" routerLink="/signup" class="ss-header-button-signup">Sign up now</button>
-    <button *ngIf="isSignupPage" routerLink="" class="ss-header-button-login">Log in</button>
+    <button *ngIf="!isSignupPage && !isLoggedin()" routerLink="/signup" class="ss-header-button-signup">Sign up now</button>
+    <button *ngIf="isSignupPage && !isLoggedin()" routerLink="" class="ss-header-button-login">Log in</button>
+     <button *ngIf="isLoggedin()" (click)="logout()" routerLink="" class="ss-header-button-logout">Log out</button>
     </div>
 </div>

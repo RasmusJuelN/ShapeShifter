@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { environment } from '../Environment/Environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl: string = 'http://localhost:5020/api/User/'
+  baseUrl: string = environment.apiUrl + "User/";
   constructor(private http:HttpClient) { }
 
   signup(signupRequest:any){
