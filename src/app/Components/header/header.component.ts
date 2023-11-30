@@ -19,12 +19,16 @@ export class HeaderComponent {
   }
 
   isLoggedin(): boolean{
-    const token = localStorage.getItem('token'); // Replace with your actual token name
+    const token = localStorage.getItem('token'); // 
 
     return !!token;
   }
 
-  logout(){
+  logout(): void{
     this.auth.removeToken();
+  }
+
+  goMainPage(): void{
+    this.router.navigate(['/main']);
   }
 }

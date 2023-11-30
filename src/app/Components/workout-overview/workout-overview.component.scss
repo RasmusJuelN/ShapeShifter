@@ -1,32 +1,63 @@
-.main-content {
+.ss-main-content {
     position: absolute;
-    top: 50%;
-    max-width: 800px;
+    top:50%;
+    transform:translateY(-50%);
+    left:5%;
+    width: 500px;
+    text-align: center;
     margin: 20px auto;
     padding: 20px;
+    
+  }
+  h2 {
+    color: #ffffff;
+    padding:10px;
   }
   
   // Workout overview styles
-  .workout-overview {
-    background-color: #f5f5f5;
+  .ss-workout-overview {
+    background-color: rgba(50, 48, 48, 0.539);
     padding: 15px;
     margin-bottom: 20px;
+    overflow-y:scroll;
+    max-height: 500px;
+    border-radius: 5px;
+
+    &::-webkit-scrollbar {
+      width: 8px;  /* Adjust the width as needed */
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: #f4f4f4;  /* Color of the thumb */
+      border-radius: 4px;  /* Roundness of the thumb */
+  }
+
+  &::-webkit-scrollbar-track {
+      background-color: rgba(50, 48, 48, 0.539);  /* Color of the track */
+  }
   
-    h2 {
-      color: #333;
+    p{
+      padding-top:5px;
     }
+    
   
     // Styles for each workout item
-    .workout-item {
+    .ss-workout-item {
+      
       border: 1px solid #ddd;
-      padding: 10px;
+      border-radius: 10px;
+      padding: 15px;
       margin-bottom: 10px;
       background-color: white;
   
       // Workout details
-      .details {
+      .ss-workout-details {
         font-size: 0.9em;
         color: #666;
+      }
+      &:hover{
+        background-color: #9a9898;
+        cursor:pointer;
       }
     }
   }
@@ -37,33 +68,21 @@
     padding: 15px;
   
     h2 {
-      color: #333;
-    }
-  
-    form {
-      margin-top: 15px;
-  
-      // Form input styles
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-  
-      input {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-      }
-  
-      // Submit button styles
-      button {
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-      }
-    }
+      color: #333; 
   }
+}
+
+.ss-add-workout{
+  margin-top:20px;
+  padding:10px 20px 10px 20px;
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+  border-radius: 30px;
+  border:none;
+  cursor: pointer;
+
+  &:hover{
+      background-color: var(--blue);
+  }
+}
+

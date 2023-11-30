@@ -11,11 +11,16 @@ export class WorkoutService {
   baseUrl = environment.apiUrl + "workout/"
   constructor(private http: HttpClient) {}
 
-  getWorkouts(): Observable<Workout[]> {
-    return this.http.get<Workout[]>(`${this.baseUrl}/workouts`);
+  getWorkouts(userId: number): Observable<Workout[]> {
+    return this.http.get<Workout[]>(`${this.baseUrl}GetWorkouts/${userId}`);
   }
 
-  getWorkoutById(id: number): Observable<Workout> {
-    return this.http.get<Workout>(`${this.baseUrl}/workouts/${id}`);
+  getWorkoutById(workoutId:number): Observable<Workout> {
+    return this.http.get<Workout>(`${this.baseUrl}${workoutId}`);
   }
+
+  createWorkout(userId: number, workout: Workout): Observable<Workout> {
+  
+    return this.http.post<Workout>(`${this.baseUrl}${userId}`, workout);
+}
 }

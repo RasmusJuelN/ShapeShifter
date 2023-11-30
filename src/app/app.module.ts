@@ -7,11 +7,15 @@ import { BackgroundComponent } from './Components/background/background.componen
 import { HeaderComponent } from './Components/header/header.component';
 import { LandingpageComponent } from './Components/landingpage/landingpage.component';
 import { LoginComponent } from './Components/login/login.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { MainComponent } from './Components/main/main.component';
-import {NgToastModule} from 'ng-angular-popup';
+import { NgToastModule} from 'ng-angular-popup';
 import { SignupComponent } from './Components/signup/signup.component';
 import { WorkoutOverviewComponent } from './Components/workout-overview/workout-overview.component';
+import { WorkoutComponent } from './Components/workout/workout.component';
+import { AddWorkoutComponent } from './Components/add-workout/add-workout.component';
+
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { WorkoutOverviewComponent } from './Components/workout-overview/workout-
     MainComponent,
     SignupComponent,
     WorkoutOverviewComponent,
-    
+    WorkoutComponent,
+    AddWorkoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { WorkoutOverviewComponent } from './Components/workout-overview/workout-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgToastModule
+    NgToastModule,
+    
     
   ],
   providers: [],

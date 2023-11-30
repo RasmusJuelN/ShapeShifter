@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { NgToastService } from 'ng-angular-popup';
+import { UserService } from 'src/app/Services/user.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent {
 
   loginForm!: FormGroup;
   
-  constructor(private fb: FormBuilder, private auth:AuthService, private router: Router, private toast: NgToastService) {}
+  constructor(private fb: FormBuilder, private auth:AuthService, private router: Router, private toast: NgToastService, private user: UserService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -39,9 +40,9 @@ export class LoginComponent {
           });
           this.loginForm.reset();
           this.auth.setToken(res.token)
-          console.log(res.token);
           const tokenPayload = this.auth.decodedToken();
-          // this.user.setUsername(tokenPayload.unique_name);
+          this.user.setUserId(tokenPayload.id)
+
 
 
           this.router.navigate(['main'])

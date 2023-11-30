@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div *ngIf="workout" class="workout-details">
+    <h2>{{ workout.workoutName }}</h2>
+    <p class="workout-date">Date: {{ workout.workoutDate | date }}</p>
+  
+    <div *ngFor="let exercise of workout.exercises" class="exercise-item">
+      <h3>{{ exercise.exerciseName }}</h3>
+      <p>Weight: {{exercise.weight}}</p>
+      <p>Reps: {{ exercise.reps }}</p>
+      <p>Sets: {{ exercise.sets }}</p>
+      <button >edit</button>
+      <button>delete</button>
+    </div>
+  </div>

@@ -1,35 +1,16 @@
 <app-header></app-header>
 
 
-<div class="main-content">
+<div class="ss-main-content">
+<h2>Workout Overview</h2>
+    <section class="ss-workout-overview">
+ 
+      <div *ngFor="let item of workouts" class="ss-workout-item" (click)="navigateToWorkout(item.workoutId)" >
+        <h3 >{{item.workoutName}}</h3>
+        <p class="ss-workout-details">{{item.workoutDate | date}}</p> 
 
-    <!-- Workout Overview Section -->
-    <section class="workout-overview">
-      <h2>Workout Overview</h2>
-  
-      <!-- Workout items go here, you can use Angular *ngFor to loop through the workouts -->
-      <div class="workout-item">
-        <h3>Workout Title</h3>
-        <p class="details">Date: dd/mm/yyyy</p>
-        <!-- Add more details as needed -->
       </div>
-  
-      <!-- Add more workout items as needed -->
-  
-    </section>
-  
-    <!-- Add New Workout Form Section -->
-    <section class="add-workout-form">
-      <h2>Add New Workout</h2>
-  
-      <form>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
-  
-        <!-- Add more form fields as needed -->
-  
-        <button type="submit">Add Workout</button>
-      </form>
-    </section>
-  
+    </section> 
+    <button class="ss-add-workout" routerLink="/addworkout">Add new workout</button>
+
   </div>
