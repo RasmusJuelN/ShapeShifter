@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    position:absolute;
+    top:15%;
+    lefT:5%;
+    
+}
+
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    padding: 20px;
+    height:fit-content;
+}
+
+.sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 0 20px 0 20px;
+}
+
+.active-link {
+    background-color: #555;
+}

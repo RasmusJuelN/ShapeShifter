@@ -1,60 +1,62 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../Environment/Environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  baseUrl: string = environment.apiUrl + "Authentication/"
-  private userPayload:any;
+  baseUrl: string = environment.apiUrl + "Authentication/";
+  private jwtHelper = new JwtHelperService();
+  private userPayload: any;
 
-  constructor(private http:HttpClient) { 
-    this.userPayload = this.decodedToken();
+  private userRoleSubject = new BehaviorSubject<string | null>(null);
+    userRole$ = this.userRoleSubject.asObservable();
+
+  constructor(private http: HttpClient) {
+    this.updateUserPayload();
   }
 
-  
-
-
-  login(loginRequest:any){
-    return this.http.post<any>(`${this.baseUrl}authenticate`,loginRequest)
+  login(loginRequest: any) : Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}authenticate`, loginRequest);
   }
 
-
-  // login(username: string, password: string): Observable<any> {
-  //   const loginRequest = {
-  //     username: username,
-  //     password: password,
-  //   };
-
-  //   return this.http.post<any>(`${this.baseUrl}authenticate`, loginRequest);
-  // }
-
-  setToken(tokenValue:string){
-    localStorage.setItem('token', tokenValue)
+  setToken(tokenValue: string) : void{
+    localStorage.setItem('token', tokenValue);
+    this.updateUserPayload();
+    this.userRoleSubject.next(this.getUserRoleFromToken());
   }
 
-  getToken(){
+  getToken() : any {
     return localStorage.getItem('token');
   }
 
-  removeToken(){
+  removeToken() : void{
     localStorage.removeItem('token');
+    this.updateUserPayload();
   }
 
-  decodedToken(){
-    const jwtHelper = new JwtHelperService();
-    const token = this.getToken()!;
-    // console.log(jwtHelper.decodeToken(token))
-    return jwtHelper.decodeToken(token);
+  decodedToken() : any{
+    const token = this.getToken();
+    if (token) {
+      return this.jwtHelper.decodeToken(token);
+    }
+    return null;
   }
 
-  getUserIdFromToken(){
-    if(this.userPayload)
-    return this.userPayload.id;
+  getUserIdFromToken() : any {
+    return this.userPayload?.id;
   }
 
+  getUserRoleFromToken() : string {
+    return this.userPayload?.role;
+  }
+
+  private updateUserPayload() : void {
+    this.userPayload = this.decodedToken();
+  }
 }

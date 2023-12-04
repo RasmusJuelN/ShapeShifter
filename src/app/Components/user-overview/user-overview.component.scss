@@ -1,0 +1,63 @@
+
+div {
+    color:white;
+    width: 1000px;
+    max-height: 500px;
+    
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        
+    }
+
+    table {
+        overflow-y: scroll;
+        
+
+    
+    &::-webkit-scrollbar {
+        width: 8px;  /* Adjust the width as needed */
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background-color: #f4f4f4;  /* Color of the thumb */
+        border-radius: 4px;  /* Roundness of the thumb */
+    }
+  
+    &::-webkit-scrollbar-track {
+        background-color: rgba(50, 48, 48, 0.539);  /* Color of the track */
+    }
+        width: 100%;
+        border-collapse: collapse;
+
+        td{
+           
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--blue);
+            color:black;
+        }
+        tr{
+            background-color: rgba(34, 34, 34, 0.425);;
+        }
+        tr:hover {
+            background-color: #66c7ff52;
+        }
+    }
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}

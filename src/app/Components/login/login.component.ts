@@ -35,23 +35,19 @@ export class LoginComponent {
         next:(res)=>{
           console.log(res.message)
           alert(res.message)
-          this.toast.success({
-            detail: "Success", summary: res.message, duration: 3000
-          });
           this.loginForm.reset();
           this.auth.setToken(res.token)
-          const tokenPayload = this.auth.decodedToken();
-          this.user.setUserId(tokenPayload.id)
-
-
-
-          this.router.navigate(['main'])
+          
+          this.auth.userRole$.subscribe((role) => {
+            if (role === 'admin') {
+                this.router.navigate(['admin']);
+            } else {
+                this.router.navigate(['main']);
+            }
+          });
         },
         error:(err)=>{
           alert(err.error.message)
-          this.toast.error({
-            detail: "Error", summary: err?.error.message, duration: 3000
-          });
         }
       })
     }
