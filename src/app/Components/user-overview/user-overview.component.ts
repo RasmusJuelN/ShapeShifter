@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/Models/User';
-import { ConfirmationService } from 'src/app/Services/confirmation.service';
+import { AuthService } from 'src/app/Services/auth.service';
+
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -11,28 +12,31 @@ import { UserService } from 'src/app/Services/user.service';
 export class UserOverviewComponent {
   users: User[] = [];
 
-  constructor(private userService: UserService, private confirm: ConfirmationService) {}
+  constructor(private userService: UserService, private user: UserService) {}
 
-  ngOnInit() {
-      this.userService.getUsers().subscribe((data) => {
-          this.users = data;
-      });
-  }
+    ngOnInit() {
+        this.loadUsers();
+        
+    }
 
-  openDeleteUser(userId: number): void {
-    this.confirm.openConfirmation();
+    loadUsers(): void {
+        this.userService.getUsers().subscribe((data) => {
+            this.users = data;
+        });
+    }
 
-    this.confirm.getConfirmation().subscribe((confirmed) => {
-        if (confirmed) {
-            this.deleteUser(userId);
-        }
-        this.confirm.closeConfirmation();
-    });
+
+    deleteUser(userId: number, username: string | undefined): void {
+    if(confirm(`Delete user: ${username}?`))
+        this.userService.deleteUser(userId).subscribe(() => {
+                alert('user was successfully deleted');
+                this.loadUsers();
+            },
+            (err) => {
+                console.error(err.error.message);
+            }
+        );
+    }
 }
 
-private deleteUser(userId: number): void {
-    // Implement your logic to delete the user by userId
-    // Example: this.userService.deleteUser(userId).subscribe(() => { ... });
-    console.log(`Deleting user with ID: ${userId}`);
-}
-}
+

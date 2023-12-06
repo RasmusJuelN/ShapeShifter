@@ -8,19 +8,23 @@ import { environment } from '../Environment/Environment';
   providedIn: 'root'
 })
 export class WorkoutService {
-  baseUrl = environment.apiUrl + "workout/"
+  baseUrl = environment.apiUrl + "workout"
   constructor(private http: HttpClient) {}
 
   getWorkouts(userId: number): Observable<Workout[]> {
-    return this.http.get<Workout[]>(`${this.baseUrl}GetWorkouts/${userId}`);
+    return this.http.get<Workout[]>(`${this.baseUrl}/GetWorkouts/${userId}`);
   }
 
   getWorkoutById(workoutId:number): Observable<Workout> {
-    return this.http.get<Workout>(`${this.baseUrl}${workoutId}`);
+    return this.http.get<Workout>(`${this.baseUrl}/${workoutId}`);
   }
 
   createWorkout(userId: number, workout: Workout): Observable<Workout> {
   
-    return this.http.post<Workout>(`${this.baseUrl}${userId}`, workout);
+    return this.http.post<Workout>(`${this.baseUrl}/${userId}`, workout);
 }
+
+  deleteWorkout(workoutId: number): Observable<Workout>{
+    return this.http.delete<Workout>(`${this.baseUrl}/${workoutId}`);
+  }
 }

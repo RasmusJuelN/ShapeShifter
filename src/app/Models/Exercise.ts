@@ -8,4 +8,5 @@ export interface Exercise {
     sets: number;
     workoutId: number;
     workout?: Workout;
+    editMode?: boolean;
   }

@@ -33,8 +33,10 @@ export class AddWorkoutComponent {
   }
 
   addExercise() {
+    if(this.workoutForm.valid) {
       const exercises = this.workoutForm.get('exercises') as any;
       exercises.push(this.initExercise());
+    }
   }
 
   get exercises() {
