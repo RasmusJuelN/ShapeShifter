@@ -1,6 +1,11 @@
 
 <div class="ss-main-content">
 <h2>Workout Overview</h2>
+<div class="ss-sort-dropdown">
+  <select id="sortingOption" [(ngModel)]="selectedSortingOption" (change)="sortWorkouts()">
+    <option *ngFor="let option of sortingOptions" [value]="option.value">{{ option.label }}</option>
+  </select>
+</div>
     <section class="ss-workout-overview">
  
       <div *ngFor="let item of workouts" class="ss-workout-item" (click)="navigateToWorkout(item.workoutId)" >
@@ -9,6 +14,6 @@
 
       </div>
     </section> 
-    <button class="ss-add-workout" routerLink="/addworkout">Add new workout</button>
+
 
   </div>

@@ -37,6 +37,9 @@ export class AddWorkoutComponent {
       const exercises = this.workoutForm.get('exercises') as any;
       exercises.push(this.initExercise());
     }
+    else{
+      alert('fields required');
+    }
   }
 
   get exercises() {

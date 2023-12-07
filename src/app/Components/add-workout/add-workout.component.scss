@@ -1,18 +1,33 @@
 /* workout.component.css */
 
+.ss-main-content {
+    width: 800px;
+    text-align: left;
+
+    padding: 0 20px 0 200px;
+
+    
+  }
+  h2 {
+    color: var(--yellow);
+    top:0;
+    margin-bottom:50px;
+  }
+
+
 .workout-form {
-    top:15%;
+
     color:white;
-    width: 700px;
-    max-height: 650px;
+
+    max-height: 550px;
     overflow-y:scroll;
-    margin: 0 auto;
-    left:50%;
+
+
     background-color: rgba(51, 51, 51, 0.842);
-    position:absolute;
-    transform:translateX(-50%);
+
+
     padding: 20px;
-    border: 1px solid #ccc;
+
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
@@ -21,7 +36,7 @@
     }
   
     &::-webkit-scrollbar-thumb {
-        background-color: #f4f4f4;  /* Color of the thumb */
+        background-color: #636363;  /* Color of the thumb */
         border-radius: 4px;  /* Roundness of the thumb */
     }
   

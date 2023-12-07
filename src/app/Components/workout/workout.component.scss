@@ -1,16 +1,15 @@
 .workout-details {
   top:15%;
   color:white;
-  width: 700px;
+  width: 800px;
   max-height: 650px;
   overflow-y:scroll;
   margin: 0 auto;
-  left:50%;
+  left:530px;
   background-color: rgba(51, 51, 51, 0.842);
   position:absolute;
-  transform:translateX(-50%);
+
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   &::-webkit-scrollbar {
@@ -130,4 +129,30 @@
 
 .save{
   background-color: rgb(41, 128, 0);
+}
+
+.add-exercise{
+
+    margin-top:10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  input{
+    width: 500px;
+    margin-left:34px;
+    padding:5px;
+  }
+}
+
+.save-btn{
+  border: none;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  margin: 10px 5px 5px 0;
+  background-color: rgb(41, 128, 0);
+  display:flex;
+
 }

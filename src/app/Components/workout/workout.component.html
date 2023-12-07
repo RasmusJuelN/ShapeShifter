@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-user-navbox></app-user-navbox>
 <div *ngIf="workout" class="workout-details">
    <div style="display:flex;justify-content: space-between;">
     <h2>{{ workout.workoutName }}</h2>
@@ -45,25 +46,30 @@
       
       
       <button class="delete btn" *ngIf="!exercise.editMode"(click)="deleteExercise(exercise.exerciseId, exercise.exerciseName)">delete</button>
-  </div>
-  <form *ngIf="showAddExerciseForm" [formGroup]="addExerciseForm" (ngSubmit)="saveExercise()">
-    <label for="exerciseName">Exercise Name:</label>
+  </div >
+  <form *ngIf="showAddExerciseForm" [formGroup]="addExerciseForm" (ngSubmit)="saveExercise()" >
+  <div class="add-exercise">
+  
+    <div style="margin-top:5px;margin-bottom:5px;">
+    <label for="exerciseName">Name:</label>
         <input type="text" id="exerciseName" formControlName="exerciseName" />
-    
+    </div>
         <label for="weight">Weight:</label>
-        <input type="number" id="weight" formControlName="weight" />
+        <input style="width: 60px;margin-right:20px;margin-left:20px;" type="number" id="weight" formControlName="weight" />
     
         <label for="reps">Reps:</label>
-        <input type="number" id="reps" formControlName="reps" />
+        <input style="width: 60px;margin-right:20px;margin-left:20px;" type="number" id="reps" formControlName="reps" />
     
         <label for="sets">Sets:</label>
-        <input type="number" id="sets" formControlName="sets" />
-    <button type="submit">Save Exercise</button>
-  </form>
+        <input style="width: 60px;margin-right:20px;margin-left:20px;" type="number" id="sets" formControlName="sets" />
+    <button class="save-btn" type="submit">Save Exercise</button>
+
   
   <!-- Button to toggle the addExerciseForm -->
+  
+  </div>  
+</form>
   <button class="ss-add-exercise" (click)="toggleAddExerciseForm()">{{showAddExerciseForm ? 'Cancel' : 'Add Exercise'}}</button>
-
   </div>
 
   

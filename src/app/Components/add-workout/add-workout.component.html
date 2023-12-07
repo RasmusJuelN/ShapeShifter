@@ -1,4 +1,6 @@
-<app-header></app-header>
+
+<div class="ss-main-content">
+    <h2>Create New Workout</h2>
 <form [formGroup]="workoutForm" (ngSubmit)="createWorkout()" class="workout-form">
     <label for="workoutName">Workout:</label>
     <input type="text" id="workoutName" formControlName="workoutName" class="form-control" />
@@ -28,3 +30,4 @@
 
     <button type="submit" class="submit-button">Create Workout</button>
 </form>
+</div>

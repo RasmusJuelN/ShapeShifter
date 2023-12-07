@@ -10,15 +10,25 @@ import { AdminComponent } from './Components/admin/admin.component';
 import { UserOverviewComponent } from './Components/user-overview/user-overview.component';
 import { AdminWorkoutsComponent } from './Components/admin-workouts/admin-workouts.component';
 import { AdminExercisesComponent } from './Components/admin-exercises/admin-exercises.component';
+import { WorkoutOverviewComponent } from './Components/workout-overview/workout-overview.component';
+import { BmiTrackerComponent } from './Components/bmi-tracker/bmi-tracker.component';
 
 
 const routes: Routes = [
   { path: '', component: LandingpageComponent }, 
-  { path: 'main', component: MainComponent },
+  { path: 'main', 
+    component: MainComponent,
+    children: [
+        { path: 'workout-overview', component: WorkoutOverviewComponent },
+        { path: 'addworkout', component: AddWorkoutComponent },
+        { path: 'bmi-tracker', component: BmiTrackerComponent },
+    ], 
+  },
+
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'workout/:id', component: WorkoutComponent },
-  { path: 'addworkout', component: AddWorkoutComponent },
+  
   {
     path: 'admin',
     component: AdminComponent,
