@@ -12,6 +12,7 @@ import { AdminWorkoutsComponent } from './Components/admin-workouts/admin-workou
 import { AdminExercisesComponent } from './Components/admin-exercises/admin-exercises.component';
 import { WorkoutOverviewComponent } from './Components/workout-overview/workout-overview.component';
 import { BmiTrackerComponent } from './Components/bmi-tracker/bmi-tracker.component';
+import { BmiPersonalComponent } from './Components/bmi-personal/bmi-personal.component';
 
 
 const routes: Routes = [
@@ -22,12 +23,14 @@ const routes: Routes = [
         { path: 'workout-overview', component: WorkoutOverviewComponent },
         { path: 'addworkout', component: AddWorkoutComponent },
         { path: 'bmi-tracker', component: BmiTrackerComponent },
+        { path: 'bmi-personal', component: BmiPersonalComponent}
     ], 
   },
 
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'workout/:id', component: WorkoutComponent },
+
   
   {
     path: 'admin',

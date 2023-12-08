@@ -1,9 +1,10 @@
 export interface BMITrackerEntry {
-  bMITrackerEntryId: number;
+  bmiTrackerEntryId: number;
   entryDate: Date;
   gender: string;
   weight: number;
   height: number;
+  age: number;
   bmi: number;
   userId: number;
 

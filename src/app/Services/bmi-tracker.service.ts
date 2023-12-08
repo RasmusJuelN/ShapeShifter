@@ -18,4 +18,14 @@ export class BmiTrackerService {
   addEntry(entry: BMITrackerEntry): Observable<BMITrackerEntry> {
     return this.http.post<BMITrackerEntry>(`${this.baseUrl}`, entry);
   }
+
+  calculateInitialBMI(bmiData: any): Observable<BMITrackerEntry> {
+    return this.http.post<BMITrackerEntry>(`${this.baseUrl}/calculate-initial-bmi`, bmiData);
+  }
+
+  updateBMIEntry(bmiData: any): Observable<BMITrackerEntry> {
+    return this.http.put<BMITrackerEntry>(`${this.baseUrl}/update-bmi`, bmiData);
+  }
+
+  
 }

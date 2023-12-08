@@ -12,7 +12,9 @@
   }
   
   // Workout overview styles
+  
   .ss-workout-overview {
+    border: 2px solid var(--blue);
     background-color: rgba(50, 48, 48, 0.539);
     padding: 15px;
     margin-bottom: 20px;
@@ -87,7 +89,7 @@
 }
 
 select{
-  border: solid 4px var(--blue);
+  border: solid 4px var(--yellow);
   border-radius: 5px;
   font-size: 12px;
   padding:5px;

@@ -23,6 +23,7 @@ import { AdminExercisesComponent } from './Components/admin-exercises/admin-exer
 import { AdminWorkoutsComponent } from './Components/admin-workouts/admin-workouts.component';
 import { UserNavboxComponent } from './Components/user-navbox/user-navbox.component';
 import { BmiTrackerComponent } from './Components/bmi-tracker/bmi-tracker.component';
+import { BmiPersonalComponent } from './Components/bmi-personal/bmi-personal.component';
 
 
 
@@ -45,6 +46,7 @@ import { BmiTrackerComponent } from './Components/bmi-tracker/bmi-tracker.compon
     AdminWorkoutsComponent,
     UserNavboxComponent,
     BmiTrackerComponent,
+    BmiPersonalComponent,
   ],
   imports: [
     BrowserModule,
