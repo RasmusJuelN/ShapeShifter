@@ -13,12 +13,16 @@ import { AdminExercisesComponent } from './Components/admin-exercises/admin-exer
 import { WorkoutOverviewComponent } from './Components/workout-overview/workout-overview.component';
 import { BmiTrackerComponent } from './Components/bmi-tracker/bmi-tracker.component';
 import { BmiPersonalComponent } from './Components/bmi-personal/bmi-personal.component';
-
+import {AuthGuard} from './Guards/auth.guard'
 
 const routes: Routes = [
-  { path: '', component: LandingpageComponent }, 
+  { path: '', component: LandingpageComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+
   { path: 'main', 
     component: MainComponent,
+    canActivate: [AuthGuard],
     children: [
         { path: 'workout-overview', component: WorkoutOverviewComponent },
         { path: 'addworkout', component: AddWorkoutComponent },
@@ -26,14 +30,10 @@ const routes: Routes = [
         { path: 'bmi-personal', component: BmiPersonalComponent}
     ], 
   },
-
-  { path: 'signup', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'workout/:id', component: WorkoutComponent },
-
-  
+  { path: 'workout/:id', canActivate: [AuthGuard], component: WorkoutComponent },
   {
     path: 'admin',
+    canActivate: [AuthGuard],
     component: AdminComponent,
     children: [
         { path: 'user-overview', component: UserOverviewComponent },

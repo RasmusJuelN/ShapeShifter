@@ -31,6 +31,11 @@ export class AuthService {
     this.userRoleSubject.next(this.getUserRoleFromToken());
   }
 
+  isLoggedin():boolean{
+    // !! converts string to boolean value - if there is a token, return true
+    return !!localStorage.getItem('token')
+  }
+  
   getToken() : any {
     return localStorage.getItem('token');
   }
