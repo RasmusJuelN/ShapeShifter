@@ -14,7 +14,7 @@ export class UserOverviewComponent {
 
   constructor(private userService: UserService, private user: UserService) {}
 
-    ngOnInit() {
+    ngOnInit() : void {
         this.loadUsers();
         
     }

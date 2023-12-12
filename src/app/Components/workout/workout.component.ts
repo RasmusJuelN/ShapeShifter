@@ -98,7 +98,7 @@ export class WorkoutComponent {
       }
   }
 
-  toggleAddExerciseForm(): void{
+  toggleAddExerciseForm(): void {
     this.showAddExerciseForm = !this.showAddExerciseForm;
     if (this.showAddExerciseForm) {
       this.addExerciseForm.reset();

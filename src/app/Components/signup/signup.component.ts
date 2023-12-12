@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
   }
 
 
-  onSignup(){
+  onSignup() : void{
     if(this.signupForm.valid){
       
       // Send the object to database
