@@ -22,31 +22,6 @@ ShapeShifter is a fitness tracking web application built with Angular. It lets u
 | Auth | @auth0/angular-jwt |
 | Testing | Karma + Jasmine |
 
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) (LTS recommended)
-- Angular CLI: `npm install -g @angular/cli`
-- Backend API running at `http://localhost:5020/api/`
-
-## Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Start the development server
-ng serve
-```
-
-Open `http://localhost:4200/` in your browser. The app reloads automatically on file changes.
-
-## Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `ng serve` | Run development server |
-| `ng build` | Build for production (output: `dist/`) |
-| `ng test` | Run unit tests with Karma |
 
 ## Project Structure
 
