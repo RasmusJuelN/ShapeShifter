@@ -1,27 +1,37 @@
 # ShapeShifter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+> **Track, Achieve, Repeat – Your Fitness Journey, Your Way!**
 
-## Development server
+ShapeShifter is a fitness tracking web application built with Angular. It lets users log workouts, monitor their BMI over time, and manage personal fitness data, while giving administrators tools to manage exercises and workout templates.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Workout Tracking** – Create and review workouts with exercises, sets, reps, and weights.
+- **BMI Tracker** – Record and visualize Body Mass Index history.
+- **User Dashboard** – Central hub for all personal fitness data.
+- **Admin Panel** – Manage users, exercises, and workout routines.
+- **Secure Authentication** – JWT-based login and route protection.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
 
-## Build
+| Area | Technology |
+|------|-----------|
+| Frontend | Angular 16, TypeScript, SCSS |
+| UI Components | Angular Material |
+| Reactive State | RxJS |
+| Auth | @auth0/angular-jwt |
+| Testing | Karma + Jasmine |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Project Structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+src/
+├── app/
+│   ├── Components/   # UI components (login, workouts, BMI, admin…)
+│   ├── Services/     # HTTP services for API communication
+│   ├── Models/       # TypeScript data models
+│   ├── Guards/       # Route authentication guards
+│   └── Environment/  # API URL configuration
+└── assets/           # Static assets
+```
